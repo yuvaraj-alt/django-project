@@ -1,0 +1,15 @@
+<html>
+<head>
+    {% load static %}
+    <title>{{ title | default:"My document" | upper }}</title>
+    <link rel="stylesheet" href="{% static '/intro.css' %}">
+</head>
+
+<body>
+    {% include 'myapp/header.html' %}
+    {% block content %}
+    {% endblock %}
+    {% include 'myapp/footer.html' %}
+</body>
+</html>
+

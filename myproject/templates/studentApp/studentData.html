@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f2fe, #f8fafc);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+
+                    <h4 class="text-center mb-4 text-secondary">
+                        Student Details
+                    </h4>
+
+                    <table class="table table-sm table-borderless mb-4">
+                        <tr>
+                            <td class="text-muted ">Name</td>
+                            <td>{{ Name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Age</td>
+                            <td>{{ age }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Gender</td>
+                            <td>{{ gender }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Aadhar</td>
+                            <td>{{ aadhar }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Contact No</td>
+                            <td>{{ contactNo }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Address</td>
+                            <td>{{ address }}</td>
+                        </tr>
+                    </table>
+
+                    <div class="text-center">
+                        <a href="{% url 'Register' %}" class="btn btn-outline-primary btn-sm">
+                            Register Data
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

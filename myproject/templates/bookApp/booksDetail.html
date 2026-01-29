@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books Detail</title>
+</head>
+<body>
+  <fieldset>
+      <legend>Book Information</legend>
+      <table>
+          <thead>
+           <tr>
+               <th>Primary Key</th>
+               <th>bookName</th>
+               <th>authorName</th>
+               <th>pickupDate</th>
+               <th>receivedDate</th>
+               <th>status</th>
+               <th>Update</th>
+               <th>Delete</th>
+           </tr>
+          </thead>
+          <tbody>
+              {% for i in data %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.bookName }}</td>
+                    <td>{{ i.authorName }}</td>
+                    <td>{{ i.pickupDate }}</td>
+                    <td>{{ i.receivedDate }}</td>
+                    <td>{{ i.status }}</td>
+                    <td><button>Update</button></td>
+                    <td><button><a href="{% url 'deleteData' i.id %}">Delete</a></button></td>
+                </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+  </fieldset>
+  <a href="{% url 'addData' %}">Add book</a>
+</body>
+</html>

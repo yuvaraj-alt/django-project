@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        h1 {
+            font-weight: bold;
+        }
+        .table thead {
+            background-color: #212529;
+            color: white;
+        }
+        .virat-row {
+            background-color: #e3f2fd;
+            color: #000;
+            font-weight: bold;
+        }
+        .card {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+
+        }
+    </style>
+</head>
+<body>
+<h1 class="text-center">Cricket World</h1>
+   <table class="table table-bordered table-dark text-center">
+    <thead>
+        <tr>
+            <th>playerName</th>
+            <th>teamName</th>
+            <th>whichCountry</th>
+            <th>PlayedMatches</th>
+            <th>centuries</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in players %}
+        <tr class="virat-row">
+            <td>{{ p.playerName }}</td>
+            <td>{{ p.teamName }}</td>
+            <td>{{ p.whichCountry }}</td>
+            <td>{{ p.PlayedMatches }}</td>
+            <td>{{ p.centuries}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

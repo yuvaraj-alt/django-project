@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Products</h2>
+  <table>
+      <thead>
+        <tr>
+            <th>ID</th>
+            <th>ProductName</th>
+            <th>ModelName</th>
+            <th>ProductPrize</th>
+            <th>Processor</th>
+            <th>DeliveryDate</th>
+        </tr>
+      </thead>
+      <tbody>
+        { % for t in data%}
+          <tr>
+             <td>{{t.id}}</td>
+             <td>{{t.ProductName}}</td>
+             <td>{{t.ModelName}}</td>
+             <td>{{t.ProductPrize}}</td>
+             <td>{{t.Processor}}</td>
+             <td>{{t.DeliveryDate}}</td>
+              <td>
+                  <button><a href="{ % 'delete' t.id % }">Delete</a></button>
+              </td>
+          </tr>
+       { % endfor % }
+      </tbody>
+  </table>
+</body>
+</html>

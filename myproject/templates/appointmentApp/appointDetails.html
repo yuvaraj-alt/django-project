@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: #f4f6f9;
+        }
+        .card{
+            border-radius: 12px;
+        }
+        .table th{
+            background-color: #0d6efd;
+            color: white;
+            text-align: center;
+        }
+        .table td{
+            vertical-align: middle;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-5">
+
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h4 class="mb-0">Appointment Details</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client Name</th>
+                        <th>Client Number</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for i in data %}
+                    <tr>
+                        <td>{{ i.id }}</td>
+                        <td>{{ i.clientName }}</td>
+                        <td>{{ i.clientNum }}</td>
+                        <td>{{ i.date }}</td>
+                        <td>{{ i.time }}</td>
+                        <td>
+                            <span class="badge bg-success">{{ i.status }}</span>
+                        </td>
+                        <td>
+                            <a href="{% url 'dlete' i.id %}" class="btn btn-danger btn-sm">
+                                Delete
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'upt' i.id %}" class="btn btn-warning btn-sm">
+                                Update
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-end mt-3">
+                <a href="{% url 'addNew' %}" class="btn btn-primary">
+                    + Add Appointment
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

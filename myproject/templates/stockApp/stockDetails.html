@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Details</title>
+</head>
+<body>
+  <h1>Stock Details</h1>
+   <table>
+       <thead>
+        <tr>
+            <th>Primary Key</th>
+            <th>supplierName</th>
+            <th>purchasedItem</th>
+            <th>manufactureDate</th>
+            <th>expiryDate</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+       </thead>
+       <tbody>
+         {% for j in data %}
+            <tr>
+               <td>{{j.id}}</td>
+               <td>{{j.supplierName}}</td>
+               <td>{{j.purchasedItem}}</td>
+               <td>{{j.expiryDate}}</td>
+               <td>{{j.id}}</td>
+                <td><button><a href="{% url 'dltStk' j.id %}">Delete</a></button></td>
+                <td><button><a href="{% url 'upStock' j.id %}">Update</a></button></td>
+            </tr>
+         {% endfor %}
+       </tbody>
+   </table>
+    <a href="{% url 'stakAdd' %}">AddStock</a>
+</body>
+</html>

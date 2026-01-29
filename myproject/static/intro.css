@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white
+    color: white;
+}
+
+h1, h2 {
+    margin: 10px 0;
+    font-size:50px
+}
+
+.cars {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px;
+}
+
+.car-card {
+    width: 280px;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 10px;
+}
