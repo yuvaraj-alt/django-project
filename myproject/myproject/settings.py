@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'bookApp',
     'appointmentApp',
     'stockApp',
+    'eventApp',
 
 
 

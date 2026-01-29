@@ -27,14 +27,15 @@ urlpatterns = [
     path("api/v1/",include("secondApp.urls")),
     path("ticket/",include('mainApp.urls')),
     path("api/v1/",include("mainApp.ApiUrls")),
-      path("product/",include('mainApp.urls')),
-      path("api/v2/",include("trialApp.urls")),
-      path("test/",include("testApp.urls")),
-      path("quiz/",include("quizApp.urls")),
-      path("api/v3/",include("pageApp.urls")),
-      path("bookApp/",include("bookApp.urls")),
-      path("appointApp/",include("appointmentApp.urls")),
-      path("stockApp/",include("stockApp.urls")),
+    path("product/",include('mainApp.urls')),
+    path("api/v2/",include("trialApp.urls")),
+    path("test/",include("testApp.urls")),
+    path("quiz/",include("quizApp.urls")),
+    path("api/v3/",include("pageApp.urls")),
+    path("bookApp/",include("bookApp.urls")),
+    path("appointApp/",include("appointmentApp.urls")),
+    path("stockApp/",include("stockApp.urls")),
+    path("eventApp/",include("eventApp.urls"))
 
 
 

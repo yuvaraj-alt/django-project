@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Events</title>
 </head>
 <body>
-$END$
+  <fieldset>
+    <legend>Competition Details</legend>
+    <table>
+       <thead>
+        <tr>
+          <th>Primary key</th>
+          <th>eventName</th>
+          <th>attendeeName</th>
+          <th>email</th>
+          <th>phoneNumber</th>
+          <th>registrationStatus</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+       </thead>
+       <tbody>
+         {% for i in data %}
+           <tr>
+              <td>{{i.id}}</td>
+              <td>{{i.eventName}}</td>
+              <td>{{i.attendeeName}}</td>
+              <td>{{i.email}}</td>
+              <td>{{i.phoneNumber}}</td>
+              <td>{{i.registrationStatus}}</td>
+               <td><button><a href="{% url 'uptevnt' i.id %}">Update</a></button></td>
+               <td><button><a href="{% url 'dltevent' i.id %}">Delete</a></button></td>
+           </tr>
+         {% endfor %}
+       </tbody>
+    </table>
+      <a href="{% url 'evnt' %}">Add Events</a>
+  </fieldset>
 </body>
 </html>
