@@ -35,8 +35,8 @@ urlpatterns = [
     path("bookApp/",include("bookApp.urls")),
     path("appointApp/",include("appointmentApp.urls")),
     path("stockApp/",include("stockApp.urls")),
-    path("eventApp/",include("eventApp.urls"))
-
+    path("eventApp/",include("eventApp.urls")),
+    path("quizzApp/",include("quizzApp.urls")),
 
 
 ]

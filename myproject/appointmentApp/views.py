@@ -34,5 +34,5 @@ def UpdateView(request,id):
 def deleteView(request, id):
     data = AppointModel.objects.get(id=id)
     data.delete()
-    return redirect("/appointApp/appoint/")
+    return redirect("appointMent")
 

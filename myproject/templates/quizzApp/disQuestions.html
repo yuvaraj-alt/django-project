@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title> Questions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-$END$
+ <h2>Questions</h2>
+  <form method="POST">
+        {% csrf_token %}
+        {% for q in question %}
+          <p>{{ q.questions }}</p>
+          <label><input type="radio" value="{{ q.option1 }}" name="{{ q.id }}">{{ q.option1 }}</label>
+          <label><input type="radio" value="{{ q.option2 }}" name="{{ q.id }}">{{ q.option2 }}</label>
+          <label><input type="radio" value="{{ q.option3 }}" name="{{ q.id }}">{{ q.option3 }}</label>
+          <label><input type="radio" value="{{ q.option4 }}" name="{{ q.id }}">{{ q.option4 }}</label>
+        {% endfor %}
+       <div><button type="submit">Submit Answer</button></div>
+  </form>
 </body>
 </html>
